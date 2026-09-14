@@ -6,6 +6,10 @@ public class ThrowDemo {
         if(people <= 0) {
             throw new IllegalArgumentException("Number of people must be positive");
         }
+
+        if(slices < 0) {
+            throw new IllegalArgumentException("Number of slices must be positive");
+        }
         return slices / people;
     }
     public static void showShare(int slices, int people) {
@@ -20,11 +24,11 @@ public class ThrowDemo {
 
     public static void main(String[] args) {
         try {
-            showShare(12, 0);                                                                           // Inputs
+            showShare(-6, 3);                                                                           // Inputs
             System.out.println("Return normally to main");
         } catch (IllegalArgumentException e){
             System.out.println("Cannot calculate: " + e.getMessage());
-        }
+        } 
         System.out.println("Program continues");
     }
 }
